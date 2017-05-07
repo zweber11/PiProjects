@@ -1,0 +1,41 @@
+Source: 
+https://pimylifeup.com/raspberry-pi-time-lapse/
+
+Terminal: 
+sudo raspi-config //Brings up raspi-config
+
+Testing the camera: 
+raspistill -o cam.jpg
+
+Script
+mkdir timelapse
+
+cd ./timelapse
+
+sudo nano camera.sh
+
+Bash script:
+#!/bin/bash
+DATE=$(date +"%Y-%m-%d_%H%M")
+raspistill -o /home/pi/timelapse/$DATE.jpg
+
+Test the script by running the following line:
+sh camera.sh
+
+Schedule the script to take pictures
+Let’s open the cron table for editing by entering the following.
+sudo crontab –e
+
+Template: 
+# m h dom mon dow   command
+
+Schedules the timelapse to execute every minute: 
+* * * * * sh /home/pi/timelapse/camera.sh 2>&1
+
+Every 5 minutes: 
+*/5 * * * * sh /home/pi/timelapse/camera.sh 2>&1
+
+The "2>&1" part of the command disables crontab from sending an email.
+
+Ctrl+X, Y. Enter, will save changes and return you to the terminal window. 
+Adding '#' in front of the command disables it. 
