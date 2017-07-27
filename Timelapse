@@ -45,3 +45,9 @@ The "2>&1" part of the command disables crontab from sending an email.
 
 Ctrl+X, Y. Enter, will save changes and return you to the terminal window. 
 Adding '#' in front of the command disables it. 
+
+Nice read for anything/everything time lapse related.
+https://www.raspberrypi.org/forums/viewtopic.php?f=43&t=67109
+
+
+
