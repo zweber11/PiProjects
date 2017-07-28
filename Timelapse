@@ -49,5 +49,13 @@ Adding '#' in front of the command disables it.
 Nice read for anything/everything time lapse related.
 https://www.raspberrypi.org/forums/viewtopic.php?f=43&t=67109
 
+In terminal, to take a picture every 2 seconds over a 30 second duration and to the following directory; 
+raspistill -t 30000 -tl 2000 -o /home/pi/timelapse/image%04d.jpg
+
+" " 5 seconds over the next 8 hours; (5760 pictures)
+raspistill -t 28800000 -tl 5000 -o /home/pi/timelapse/image%04d.jpg
+
+Ctrl + C within Terminal aborts program. 
+
 
 
