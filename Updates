@@ -1,0 +1,18 @@
+//https://www.raspberrypi.org/documentation/raspbian/updating.md
+
+//Updates system's package list
+sudo apt-get update 
+
+//Upgrades all installed packages to their latest versions
+//Note: This will only update existing package on your image, not brand new packages...
+sudo apt-get dist-upgrade
+
+//Uninstalls non-required packages that were found during the "sudo apt-get update" command
+apt-get autoremove
+
+//Checks how much free space you have on the Pi, apt won't do this for you.
+df -h
+
+//Can free up space using the following command
+sudo apt-get clean
+
